@@ -46,16 +46,27 @@ public class Curso {
 	 * @return
 	 */
 	public Boolean inscribir(Alumno a) {
-		log.registrar(this, "inscribir ",a.toString());
-		return false;
+		try {
+			log.registrar(this, "inscribir ",a.toString());
+			return true;
+		}
+		catch(IOException e){
+			e.printStackTrace();
+			return false;
+		}
 	}
 	
 	
 	/**
 	 * imprime los inscriptos en orden alfabetico
 	 */
-	public void imprimirInscriptos() {
+	public void imprimirInscriptos(){
+		try {
 		log.registrar(this, "imprimir listado",this.inscriptos.size()+ " registros ");
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
 	}
 
 
